@@ -77,7 +77,7 @@ def input_validation(text_value):
     return valud_imput
 
 def process_user_data(text_value):
-    if _validate_imput(text_value):
+    if input_validation(text_value):
         # Process the data (dummy processing here)
         return True
     else:

@@ -21,7 +21,9 @@ def calculate_hypotenuse(side_a, side_b):
 def count_words(sentence):
     if len(sentence) == 0:
         return 0
-    words = sentence.split(',')  
+    
+    words = sentence.split() # Splits on whitespace by default
+
     return len(words)
 
 
@@ -87,6 +89,8 @@ def main():
     # TEST B: Word Count
     print(f"Test B1 ('hello, world'): {count_words('hello, world')} (Expected: 2)")
     print(f"Test B2 ('hello world'): {count_words('hello world')} (Expected: 2)")
+    print(f"Test B3 ('hello, world. this is a test!'): {count_words('hello, world. this is a test!')} (Expected: 6)")
+
 
     print("-" * 20)
 

@@ -60,17 +60,17 @@ def calculate_shipping_cost(weight, destination):
 
 # This method uses funky logic. Rewrite it using different loop structures
 def curve_scores(scores):
-    # In the second branch edit curve_scores to use a while loop instead of a map. 
-    # Do not use a constant, but generate a random number between one and ten to add to the score.
-    curved_scores = []
-    
-    while len(curved_scores) < len(scores):
-        index = len(curved_scores)
-        random_increase = random.randint(1, 10)
-        new_score = scores[index] + random_increase
-        curved_scores.append(new_score)
+    # return list(map(lambda x: min(x + 5, 100), scores))
 
-    return curved_scores
+    # edit curve_scores to use a for loop instead of a map, 
+    # and edit it to use a constant to multiple the score by 1.05 instead of adding 5.
+    for i in range(len(scores)):
+        curved_score = scores[i] * 1.05
+        if curved_score > 100:
+            scores[i] = 100
+        else:
+            scores[i] = curved_score
+    return scores
 
 
 # For scenario three change the name of this method.

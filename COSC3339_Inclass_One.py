@@ -59,7 +59,17 @@ def calculate_shipping_cost(weight, destination):
 
 # This method uses funky logic. Rewrite it using different loop structures
 def curve_scores(scores):
-    return list(map(lambda x: min(x + 5, 100), scores))
+    # return list(map(lambda x: min(x + 5, 100), scores))
+
+    # edit curve_scores to use a for loop instead of a map, 
+    # and edit it to use a constant to multiple the score by 1.05 instead of adding 5.
+    for i in range(len(scores)):
+        curved_score = scores[i] * 1.05
+        if curved_score > 100:
+            scores[i] = 100
+        else:
+            scores[i] = curved_score
+    return scores
 
 
 # For scenario three change the name of this method.

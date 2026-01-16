@@ -11,6 +11,7 @@ branches to simulate merge conflicts.
 """
 
 import math
+import random
 
 # This method contains a bug. In your commit note, state the bug and how you fixed it
 def calculate_hypotenuse(side_a, side_b):
@@ -59,7 +60,17 @@ def calculate_shipping_cost(weight, destination):
 
 # This method uses funky logic. Rewrite it using different loop structures
 def curve_scores(scores):
-    return list(map(lambda x: min(x + 5, 100), scores))
+    # In the second branch edit curve_scores to use a while loop instead of a map. 
+    # Do not use a constant, but generate a random number between one and ten to add to the score.
+    curved_scores = []
+    
+    while len(curved_scores) < len(scores):
+        index = len(curved_scores)
+        random_increase = random.randint(1, 10)
+        new_score = scores[index] + random_increase
+        curved_scores.append(new_score)
+
+    return curved_scores
 
 
 # For scenario three change the name of this method.

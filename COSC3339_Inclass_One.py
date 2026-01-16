@@ -16,11 +16,13 @@ import random
 # This method contains a bug. In your commit note, state the bug and how you fixed it
 def calculate_hypotenuse(side_a, side_b):
     result = math.hypot(side_a, side_b)
+
     return result
 
 # This method contains a bug. In your commit note, state the bug and how you fixed it
 def count_words(sentence):
     if len(sentence) == 0:
+
         return 0
     
     words = sentence.split() # Splits on whitespace by default
@@ -33,26 +35,39 @@ def calculate_shipping_cost(weight, destination):
     cost = 0
     
     if destination == "US":
+
         base_cost = 5
+
         if weight <= 12:
+
             cost = base_cost
+
         else:
             # Over 12 lbs, add $1 per extra lb
+
             extra_weight = weight - 12
+
             cost = base_cost + (extra_weight * 1.0)
             
     elif destination == "International":
+
         base_cost = 14
+
         if weight <= 5:
+
             cost = base_cost
         else:
             # Over 5 lbs, add $5 per extra lb
+
             extra_weight = weight - 5
+
             cost = base_cost + (extra_weight * 5.0)
             
     else:
         # Unknown destination
+
         print(f"Error: Unknown destination {destination}")
+
         return None
 
     return cost * 1.0 # Ensure float return
@@ -65,11 +80,17 @@ def curve_scores(scores):
     # edit curve_scores to use a for loop instead of a map, 
     # and edit it to use a constant to multiple the score by 1.05 instead of adding 5.
     for i in range(len(scores)):
+
         curved_score = scores[i] * 1.05
+
         if curved_score > 100:
+
             scores[i] = 100
+
         else:
+
             scores[i] = curved_score
+
     return scores
 
 
@@ -80,9 +101,11 @@ def input_validation(text_value):
     valud_imput = True 
     
     if text_value is None:
+
         valud_imput = False
     
     if text_value == "":
+
         valud_imput = False
         
     return valud_imput
@@ -90,8 +113,10 @@ def input_validation(text_value):
 def process_user_data(text_value):
     if input_validation(text_value):
         # Process the data (dummy processing here)
+
         return True
     else:
+        
         return False
 
 
